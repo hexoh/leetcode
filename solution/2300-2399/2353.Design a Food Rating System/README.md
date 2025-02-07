@@ -1,10 +1,25 @@
+---
+comments: true
+difficulty: 中等
+edit_url: https://github.com/doocs/leetcode/edit/main/solution/2300-2399/2353.Design%20a%20Food%20Rating%20System/README.md
+rating: 1781
+source: 第 303 场周赛 Q3
+tags:
+    - 设计
+    - 哈希表
+    - 有序集合
+    - 堆（优先队列）
+---
+
+<!-- problem:start -->
+
 # [2353. 设计食物评分系统](https://leetcode.cn/problems/design-a-food-rating-system)
 
 [English Version](/solution/2300-2399/2353.Design%20a%20Food%20Rating%20System/README_EN.md)
 
 ## 题目描述
 
-<!-- 这里写题目描述 -->
+<!-- description:start -->
 
 <p>设计一个支持下述操作的食物评分系统：</p>
 
@@ -72,16 +87,19 @@ foodRatings.highestRated("japanese"); // 返回 "ramen"
 	<li>最多调用 <code>changeRating</code> 和 <code>highestRated</code> <strong>总计</strong> <code>2 * 10<sup>4</sup></code> 次</li>
 </ul>
 
+<!-- description:end -->
+
 ## 解法
+
+<!-- solution:start -->
 
 ### 方法一
 
 <!-- tabs:start -->
 
+#### Python3
+
 ```python
-from sortedcontainers import SortedSet
-
-
 class FoodRatings:
     def __init__(self, foods: List[str], cuisines: List[str], ratings: List[int]):
         self.mp = {}
@@ -106,6 +124,8 @@ class FoodRatings:
 # obj.changeRating(food,newRating)
 # param_2 = obj.highestRated(cuisine)
 ```
+
+#### C++
 
 ```cpp
 using pis = pair<int, string>;
@@ -147,4 +167,6 @@ public:
 
 <!-- tabs:end -->
 
-<!-- end -->
+<!-- solution:end -->
+
+<!-- problem:end -->

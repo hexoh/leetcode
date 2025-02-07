@@ -1,8 +1,23 @@
+---
+comments: true
+difficulty: Medium
+edit_url: https://github.com/doocs/leetcode/edit/main/solution/1100-1199/1131.Maximum%20of%20Absolute%20Value%20Expression/README_EN.md
+rating: 2059
+source: Weekly Contest 146 Q4
+tags:
+    - Array
+    - Math
+---
+
+<!-- problem:start -->
+
 # [1131. Maximum of Absolute Value Expression](https://leetcode.com/problems/maximum-of-absolute-value-expression)
 
 [中文文档](/solution/1100-1199/1131.Maximum%20of%20Absolute%20Value%20Expression/README.md)
 
 ## Description
+
+<!-- description:start -->
 
 <p>Given two arrays of integers with equal lengths, return the maximum value of:</p>
 
@@ -33,7 +48,11 @@
 	<li><code>-10^6 &lt;= arr1[i], arr2[i] &lt;= 10^6</code></li>
 </ul>
 
+<!-- description:end -->
+
 ## Solutions
+
+<!-- solution:start -->
 
 ### Solution 1: Mathematics + Enumeration
 
@@ -54,6 +73,8 @@ Similar problems:
 
 <!-- tabs:start -->
 
+#### Python3
+
 ```python
 class Solution:
     def maxAbsValExpr(self, arr1: List[int], arr2: List[int]) -> int:
@@ -67,6 +88,8 @@ class Solution:
                 ans = max(ans, mx - mi)
         return ans
 ```
+
+#### Java
 
 ```java
 class Solution {
@@ -88,6 +111,8 @@ class Solution {
     }
 }
 ```
+
+#### C++
 
 ```cpp
 class Solution {
@@ -111,6 +136,8 @@ public:
 };
 ```
 
+#### Go
+
 ```go
 func maxAbsValExpr(arr1 []int, arr2 []int) int {
 	dirs := [5]int{1, -1, -1, 1, 1}
@@ -129,6 +156,8 @@ func maxAbsValExpr(arr1 []int, arr2 []int) int {
 	return ans
 }
 ```
+
+#### TypeScript
 
 ```ts
 function maxAbsValExpr(arr1: number[], arr2: number[]): number {
@@ -152,4 +181,6 @@ function maxAbsValExpr(arr1: number[], arr2: number[]): number {
 
 <!-- tabs:end -->
 
-<!-- end -->
+<!-- solution:end -->
+
+<!-- problem:end -->

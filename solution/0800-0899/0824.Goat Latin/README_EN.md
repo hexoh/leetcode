@@ -1,8 +1,20 @@
+---
+comments: true
+difficulty: Easy
+edit_url: https://github.com/doocs/leetcode/edit/main/solution/0800-0899/0824.Goat%20Latin/README_EN.md
+tags:
+    - String
+---
+
+<!-- problem:start -->
+
 # [824. Goat Latin](https://leetcode.com/problems/goat-latin)
 
 [中文文档](/solution/0800-0899/0824.Goat%20Latin/README.md)
 
 ## Description
+
+<!-- description:start -->
 
 <p>You are given a string <code>sentence</code> that consist of words separated by spaces. Each word consists of lowercase and uppercase letters only.</p>
 
@@ -48,11 +60,17 @@
 	<li>All the words in <code>sentence</code> are separated by a single space.</li>
 </ul>
 
+<!-- description:end -->
+
 ## Solutions
+
+<!-- solution:start -->
 
 ### Solution 1
 
 <!-- tabs:start -->
+
+#### Python3
 
 ```python
 class Solution:
@@ -66,6 +84,8 @@ class Solution:
             ans.append(word)
         return ' '.join(ans)
 ```
+
+#### Java
 
 ```java
 class Solution {
@@ -94,6 +114,8 @@ class Solution {
 }
 ```
 
+#### TypeScript
+
 ```ts
 function toGoatLatin(sentence: string): string {
     return sentence
@@ -110,6 +132,8 @@ function toGoatLatin(sentence: string): string {
         .join(' ');
 }
 ```
+
+#### Rust
 
 ```rust
 use std::collections::HashSet;
@@ -139,4 +163,6 @@ impl Solution {
 
 <!-- tabs:end -->
 
-<!-- end -->
+<!-- solution:end -->
+
+<!-- problem:end -->

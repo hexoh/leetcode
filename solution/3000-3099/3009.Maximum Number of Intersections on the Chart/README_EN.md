@@ -1,8 +1,23 @@
-# [3009. Maximum Number of Intersections on the Chart](https://leetcode.com/problems/maximum-number-of-intersections-on-the-chart)
+---
+comments: true
+difficulty: Hard
+edit_url: https://github.com/doocs/leetcode/edit/main/solution/3000-3099/3009.Maximum%20Number%20of%20Intersections%20on%20the%20Chart/README_EN.md
+tags:
+    - Binary Indexed Tree
+    - Geometry
+    - Array
+    - Math
+---
+
+<!-- problem:start -->
+
+# [3009. Maximum Number of Intersections on the Chart 🔒](https://leetcode.com/problems/maximum-number-of-intersections-on-the-chart)
 
 [中文文档](/solution/3000-3099/3009.Maximum%20Number%20of%20Intersections%20on%20the%20Chart/README.md)
 
 ## Description
+
+<!-- description:start -->
 
 <p>There is a line chart consisting of <code>n</code> points connected by line segments. You are given a <strong>1-indexed</strong> integer array <code>y</code>. The <code>k<sup>th</sup></code> point has coordinates <code>(k, y[k])</code>. There are no horizontal lines; that is, no two consecutive points have the same y-coordinate.</p>
 
@@ -36,23 +51,56 @@
 	<li><code>y[i] != y[i + 1]</code> for <code>i</code> in range <code>[1, n - 1]</code></li>
 </ul>
 
+<!-- description:end -->
+
 ## Solutions
+
+<!-- solution:start -->
 
 ### Solution 1
 
 <!-- tabs:start -->
 
+#### Python3
+
 ```python
 
 ```
 
-```java
+#### Java
 
+```java
+class Solution {
+    public int maxIntersectionCount(int[] y) {
+        final int n = y.length;
+        int ans = 0;
+        int intersectionCount = 0;
+        TreeMap<Integer, Integer> line = new TreeMap<>();
+
+        for (int i = 1; i < n; ++i) {
+            final int start = 2 * y[i - 1];
+            final int end = 2 * y[i] + (i == n - 1 ? 0 : y[i] > y[i - 1] ? -1 : 1);
+            line.merge(Math.min(start, end), 1, Integer::sum);
+            line.merge(Math.max(start, end) + 1, -1, Integer::sum);
+        }
+
+        for (final int count : line.values()) {
+            intersectionCount += count;
+            ans = Math.max(ans, intersectionCount);
+        }
+
+        return ans;
+    }
+}
 ```
+
+#### C++
 
 ```cpp
 
 ```
+
+#### Go
 
 ```go
 
@@ -60,4 +108,6 @@
 
 <!-- tabs:end -->
 
-<!-- end -->
+<!-- solution:end -->
+
+<!-- problem:end -->

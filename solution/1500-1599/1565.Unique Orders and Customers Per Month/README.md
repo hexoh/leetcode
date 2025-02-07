@@ -1,10 +1,20 @@
-# [1565. 按月统计订单数与顾客数](https://leetcode.cn/problems/unique-orders-and-customers-per-month)
+---
+comments: true
+difficulty: 简单
+edit_url: https://github.com/doocs/leetcode/edit/main/solution/1500-1599/1565.Unique%20Orders%20and%20Customers%20Per%20Month/README.md
+tags:
+    - 数据库
+---
+
+<!-- problem:start -->
+
+# [1565. 按月统计订单数与顾客数 🔒](https://leetcode.cn/problems/unique-orders-and-customers-per-month)
 
 [English Version](/solution/1500-1599/1565.Unique%20Orders%20and%20Customers%20Per%20Month/README_EN.md)
 
 ## 题目描述
 
-<!-- 这里写题目描述 -->
+<!-- description:start -->
 
 <p>表：<code>Orders</code></p>
 
@@ -66,11 +76,19 @@ Orders</code>
 在 2020 年 12 月<sub>，</sub>有 2 份来自 1 位顾客的订单<sub>，</sub>且 2 份订单金额都大于 $20<sub> 。</sub>
 在 2021 年 01 月<sub>，</sub>有 2 份来自 2 位不同顾客的订单<sub>，</sub>但只有其中一份订单金额大于 $20 <sub>。</sub></pre>
 
+<!-- description:end -->
+
 ## 解法
 
-### 方法一
+<!-- solution:start -->
+
+### 方法一：条件筛选 + 分组统计
+
+我们可以先筛选出金额大于 $20$ 的订单，然后按月份进行分组统计订单数和顾客数。
 
 <!-- tabs:start -->
+
+#### MySQL
 
 ```sql
 # Write your MySQL query statement below
@@ -80,9 +98,32 @@ SELECT
     COUNT(DISTINCT customer_id) AS customer_count
 FROM Orders
 WHERE invoice > 20
-GROUP BY month;
+GROUP BY 1;
+```
+
+#### Pandas
+
+```python
+import pandas as pd
+
+
+def unique_orders_and_customers(orders: pd.DataFrame) -> pd.DataFrame:
+    filtered_orders = orders[orders["invoice"] > 20]
+    filtered_orders["month"] = (
+        filtered_orders["order_date"].dt.to_period("M").astype(str)
+    )
+    result = (
+        filtered_orders.groupby("month")
+        .agg(
+            order_count=("order_id", "count"), customer_count=("customer_id", "nunique")
+        )
+        .reset_index()
+    )
+    return result
 ```
 
 <!-- tabs:end -->
 
-<!-- end -->
+<!-- solution:end -->
+
+<!-- problem:end -->

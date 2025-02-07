@@ -1,10 +1,22 @@
+---
+comments: true
+difficulty: 中等
+edit_url: https://github.com/doocs/leetcode/edit/main/solution/0000-0099/0055.Jump%20Game/README.md
+tags:
+    - 贪心
+    - 数组
+    - 动态规划
+---
+
+<!-- problem:start -->
+
 # [55. 跳跃游戏](https://leetcode.cn/problems/jump-game)
 
 [English Version](/solution/0000-0099/0055.Jump%20Game/README_EN.md)
 
 ## 题目描述
 
-<!-- 这里写题目描述 -->
+<!-- description:start -->
 
 <p>给你一个非负整数数组&nbsp;<code>nums</code> ，你最初位于数组的 <strong>第一个下标</strong> 。数组中的每个元素代表你在该位置可以跳跃的最大长度。</p>
 
@@ -37,7 +49,11 @@
 	<li><code>0 &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>
 </ul>
 
+<!-- description:end -->
+
 ## 解法
+
+<!-- solution:start -->
 
 ### 方法一：贪心
 
@@ -57,6 +73,8 @@
 
 <!-- tabs:start -->
 
+#### Python3
+
 ```python
 class Solution:
     def canJump(self, nums: List[int]) -> bool:
@@ -67,6 +85,8 @@ class Solution:
             mx = max(mx, i + x)
         return True
 ```
+
+#### Java
 
 ```java
 class Solution {
@@ -82,6 +102,8 @@ class Solution {
     }
 }
 ```
+
+#### C++
 
 ```cpp
 class Solution {
@@ -99,6 +121,8 @@ public:
 };
 ```
 
+#### Go
+
 ```go
 func canJump(nums []int) bool {
 	mx := 0
@@ -112,6 +136,8 @@ func canJump(nums []int) bool {
 }
 ```
 
+#### TypeScript
+
 ```ts
 function canJump(nums: number[]): boolean {
     let mx: number = 0;
@@ -124,6 +150,8 @@ function canJump(nums: number[]): boolean {
     return true;
 }
 ```
+
+#### Rust
 
 ```rust
 impl Solution {
@@ -144,6 +172,8 @@ impl Solution {
 }
 ```
 
+#### JavaScript
+
 ```js
 /**
  * @param {number[]} nums
@@ -160,6 +190,8 @@ var canJump = function (nums) {
     return true;
 };
 ```
+
+#### C#
 
 ```cs
 public class Solution {
@@ -178,4 +210,6 @@ public class Solution {
 
 <!-- tabs:end -->
 
-<!-- end -->
+<!-- solution:end -->
+
+<!-- problem:end -->

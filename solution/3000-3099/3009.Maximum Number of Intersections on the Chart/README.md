@@ -1,10 +1,23 @@
-# [3009. 折线图上的最大交点数量](https://leetcode.cn/problems/maximum-number-of-intersections-on-the-chart)
+---
+comments: true
+difficulty: 困难
+edit_url: https://github.com/doocs/leetcode/edit/main/solution/3000-3099/3009.Maximum%20Number%20of%20Intersections%20on%20the%20Chart/README.md
+tags:
+    - 树状数组
+    - 几何
+    - 数组
+    - 数学
+---
+
+<!-- problem:start -->
+
+# [3009. 折线图上的最大交点数量 🔒](https://leetcode.cn/problems/maximum-number-of-intersections-on-the-chart)
 
 [English Version](/solution/3000-3099/3009.Maximum%20Number%20of%20Intersections%20on%20the%20Chart/README_EN.md)
 
 ## 题目描述
 
-<!-- 这里写题目描述 -->
+<!-- description:start -->
 
 <p>有一条由 <code>n</code> 个点连接而成的折线图。给定一个 <strong>下标从 1 开始&nbsp;</strong>的整数数组 <code>y</code>，第&nbsp;<code>k</code>&nbsp;个点的坐标是 <code>(k, y[k])</code>。图中没有水平线，即没有两个相邻的点有相同的 y 坐标。</p>
 
@@ -40,23 +53,56 @@
 	<li>对于范围&nbsp;<code>[1, n - 1]</code> 内的所有&nbsp;<code>i</code>，都有 <code>y[i] != y[i + 1]</code></li>
 </ul>
 
+<!-- description:end -->
+
 ## 解法
+
+<!-- solution:start -->
 
 ### 方法一
 
 <!-- tabs:start -->
 
+#### Python3
+
 ```python
 
 ```
 
-```java
+#### Java
 
+```java
+class Solution {
+    public int maxIntersectionCount(int[] y) {
+        final int n = y.length;
+        int ans = 0;
+        int intersectionCount = 0;
+        TreeMap<Integer, Integer> line = new TreeMap<>();
+
+        for (int i = 1; i < n; ++i) {
+            final int start = 2 * y[i - 1];
+            final int end = 2 * y[i] + (i == n - 1 ? 0 : y[i] > y[i - 1] ? -1 : 1);
+            line.merge(Math.min(start, end), 1, Integer::sum);
+            line.merge(Math.max(start, end) + 1, -1, Integer::sum);
+        }
+
+        for (final int count : line.values()) {
+            intersectionCount += count;
+            ans = Math.max(ans, intersectionCount);
+        }
+
+        return ans;
+    }
+}
 ```
+
+#### C++
 
 ```cpp
 
 ```
+
+#### Go
 
 ```go
 
@@ -64,4 +110,6 @@
 
 <!-- tabs:end -->
 
-<!-- end -->
+<!-- solution:end -->
+
+<!-- problem:end -->
