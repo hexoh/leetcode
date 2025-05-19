@@ -1,15 +1,16 @@
 <p align="center">
-  <a href="https://github.com/doocs/leetcode"><img src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/images/leetcode-doocs.png" alt="LeetCode-GitHub-Doocs"></a>
+  <a href="https://github.com/doocs/leetcode"><img src="https://cdn-doocs.oss-cn-shenzhen.aliyuncs.com/gh/doocs/leetcode%40main/images/doocs-leetcode.png" alt="LeetCode-GitHub-Doocs"></a>
 </p>
 
 <p align="center">
-  <a href="https://doocs.github.io/#/?id=how-to-join"><img src="https://img.shields.io/badge/organization-join%20us-42b883?style=flat-square" alt="open-source-organization"></a>
-  <a href="https://github.com/doocs/leetcode"><img src="https://img.shields.io/badge/langs-Python%20%7C%20Java%20%7C%20C++%20%7C%20Go%20%7C%20TypeScript%20%7C%20Rust%20%7C%20...-red?style=flat-square&color=42b883" alt="languages"></a>
-  <a href="https://github.com/doocs/leetcode/blob/main/LICENSE"><img src="https://img.shields.io/github/license/doocs/leetcode?color=42b883&style=flat-square" alt="LICENSE"></a><br>
-  <a href="https://opencollective.com/doocs-leetcode/backers/badge.svg" alt="backers on Open Collective"><img src="https://img.shields.io/opencollective/backers/doocs-leetcode?color=42b883&style=flat-square&logo=open%20collective&logoColor=ffffff" /></a>
-  <a href="https://github.com/doocs/leetcode/stargazers"><img src="https://img.shields.io/github/stars/doocs/leetcode?color=42b883&logo=github&style=flat-square" alt="stars"></a>
-  <a href="https://github.com/doocs/leetcode/network/members"><img src="https://img.shields.io/github/forks/doocs/leetcode?color=42b883&logo=github&style=flat-square" alt="forks"></a>
-  <a href="https://opencollective.com/doocs-leetcode/sponsors/badge.svg" alt="Sponsors on Open Collective"><img src="https://img.shields.io/opencollective/sponsors/doocs-leetcode?color=42b883&style=flat-square&logo=open%20collective&logoColor=ffffff" /></a>
+  <a href="https://doocs.github.io/#/?id=how-to-join"><img src="https://img.shields.io/badge/organization-join%20us-4051B5?style=flat-square" alt="open-source-organization"></a>
+  <a href="https://github.com/doocs/leetcode"><img src="https://img.shields.io/badge/langs-Python%20%7C%20Java%20%7C%20C++%20%7C%20Go%20%7C%20TypeScript%20%7C%20Rust%20%7C%20...-red?style=flat-square&color=4051B5" alt="languages"></a>
+  <a href="https://github.com/doocs/leetcode/blob/main/LICENSE"><img src="https://img.shields.io/github/license/doocs/leetcode?color=4051B5&style=flat-square" alt="LICENSE"></a><br>
+  <a href="https://opencollective.com/doocs-leetcode/backers/badge.svg" alt="backers on Open Collective"><img src="https://img.shields.io/opencollective/backers/doocs-leetcode?color=4051B5&style=flat-square&logo=open%20collective&logoColor=ffffff" /></a>
+  <a href="https://github.com/doocs/leetcode/stargazers"><img src="https://img.shields.io/github/stars/doocs/leetcode?color=4051B5&logo=github&style=flat-square" alt="stars"></a>
+  <a href="https://github.com/doocs/leetcode/network/members"><img src="https://img.shields.io/github/forks/doocs/leetcode?color=4051B5&logo=github&style=flat-square" alt="forks"></a>
+  <a href="https://opencollective.com/doocs-leetcode/sponsors/badge.svg" alt="Sponsors on Open Collective"><img src="https://img.shields.io/opencollective/sponsors/doocs-leetcode?color=4051B5&style=flat-square&logo=open%20collective&logoColor=ffffff" /></a><br>
+  <a href="https://deepwiki.com/doocs/leetcode"><img src="https://img.shields.io/badge/chat%20with-DeepWiki-4051B5?style=flat-square" alt="deepwiki"></a>
 </p>
 
 ## 介绍
@@ -20,7 +21,7 @@
 
 ## 站点
 
-https://doocs.github.io/leetcode
+https://leetcode.doocs.org
 
 ## 算法全解
 
@@ -191,9 +192,18 @@ https://doocs.github.io/leetcode
 1. 将你的变更以 PR 的形式提交过来，项目的维护人员会在第一时间对你的变更进行 review！
 1. 你也可以参考帮助文档 https://help.github.com/cn 了解更多细节。
 
-<p align="center">
-  <a href="https://github.com/doocs/leetcode"><img src="https://cdn-doocs.oss-cn-shenzhen.aliyuncs.com/gh/doocs/leetcode@main/images/how-to-contribute.svg" alt="how-to-contribute"></a>
-</p>
+<div align="center">
+
+```mermaid
+graph TD;
+    A[LeetCode 仓库 <br> doocs/leetcode.git] -- 1.Fork（派生） --> B[你的 GitHub 仓库 <br> yourusername/leetcode.git];
+    B -- 2.Git 克隆 --> C[本地开发环境];
+    C -- 3.创建新分支并修改代码 --> D[本地修改后的代码];
+    D -- 4.提交 & 推送到你的仓库 --> B;
+    B -- 5.提交 Pull Request（合并请求） --> A;
+```
+
+</div>
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=149001365&machine=basicLinux32gb&location=SoutheastAsia)
 
@@ -223,12 +233,6 @@ https://doocs.github.io/leetcode
 <a href="https://opencollective.com/doocs-leetcode/sponsors.svg?width=890" target="_blank"><img src="https://opencollective.com/doocs-leetcode/sponsors.svg?width=890"></a>
 
 > "_You help the developer community practice for interviews, and there is nothing better we could ask for._" -- [Alan Yessenbayev](https://opencollective.com/alan-yessenbayev)
-
-## 推荐者
-
-知名互联网科技博主 [@爱可可-爱生活](https://weibo.com/fly51fly) 微博推荐。
-
-<a href="https://weibo.com/fly51fly" target="_blank"><img src="https://fastly.jsdelivr.net/gh/doocs/leetcode@main/images/recommender-fly51fly.png"></a>
 
 ## 版权
 
